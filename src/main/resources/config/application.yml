@@ -92,6 +92,23 @@ spring:
       config:
         watch:
           enabled: false
+    stream:
+      default:
+        producer:
+          useNativeEncoding: true
+        consumer:
+          useNativeEncoding: true
+      bindings:
+        output:
+          destination: employee-details
+          content-type: application/*+avro
+      kafka:
+        binder:
+          consumer-properties:
+            key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            schema.registry.url: http://localhost:8081
+            specific.avro.reader: true
   jmx:
     enabled: false
   data:
