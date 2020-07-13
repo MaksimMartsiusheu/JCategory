@@ -20,14 +20,14 @@ services:
       service: jcategory-postgresql
   kafka:
     extends:
-      file: kafka.yml
+      file: kafka_b.yml
       service: kafka
     environment:
       - KAFKA_ADVERTISED_HOST_NAME=kafka
       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
   zookeeper:
     extends:
-      file: kafka.yml
+      file: kafka_b.yml
       service: zookeeper
   consul:
     extends:

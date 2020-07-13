@@ -47,4 +47,5 @@ public class KafkaProperties {
     public void setProducer(Map<String, String> producer) {
         this.producer = producer;
     }
+
 }
